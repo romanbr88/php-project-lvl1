@@ -1,10 +1,16 @@
 {
-    "name": "hexlet/code",
-    "authors": [
-        {
-            "name": "Biryukov Roman",
-            "email": "roman.br88@yandex.ru"
-        }
-    ],
-    "require": {}
+  "name": "hexlet/code",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Biryukov Roman",
+      "email": "roman.br88@yandex.ru"
+    }
+  ],
+  "description": "Hexlet project 1",
+  "license": "MIT",
+  "bin": [
+    "bin/brain-games"
+  ],
+  "require": {}
 }
