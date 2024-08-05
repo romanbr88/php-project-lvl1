@@ -2,25 +2,24 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Even;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
 const ATTEMPTS_COUNT = 3;
 
-function play(): void
+function build(string $rules, callable $data): void
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line('Hello, %s!', $name);
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    line($rules);
 
     for ($i = 0; $i < ATTEMPTS_COUNT; $i++) {
-        $number = rand(1, 100);
-        line('Question: %s', $number);
+        [$question, $correctAnswer] = $data();
+        line('Question: %s', $question);
         $answer = prompt('Your answer:');
-        $correctAnswer = $number % 2 === 0 ? 'yes' : 'no';
 
         if ($answer !== $correctAnswer) {
             line('"%s" is wrong answer ;(. Correct answer was "%s".', $answer, $correctAnswer);
