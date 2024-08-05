@@ -11,6 +11,7 @@ const RULES = 'What number is missing in the progression?';
 function play(): void
 {
     $data = function (): array {
+        $progression = [];
         $startNumber = rand(1, 100);
         $length = rand(5, 10);
         $step = rand(1, 10);
